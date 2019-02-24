@@ -1,0 +1,29 @@
+$blue: #0083aa !default;
+$indigo: darken($blue, 5%) !default;
+$purple: darken($blue, 10%) !default;
+$pink: #df4445 !default;
+$red: #B71243 !default;
+$orange: #F6960C !default;
+$yellow: #776c09 !default;
+$green: #09B77F !default;
+$teal: darken(#0AC1BA, 20%) !default;
+$cyan: #4ACFF6 !default;
+$white: #FFFFFF;
+
+$textColor: #4d4d4d;
+
+body {
+  background: #f8f8f8 !important;
+}
+
+.card {
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+.card-header {
+  background-color: $white !important;
+}
+
+.btn-warning, .btn-info, .btn-primary {
+  color: $white !important;
+}

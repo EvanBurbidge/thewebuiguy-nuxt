@@ -1,37 +1,21 @@
 <template>
   <section class="container">
     <div>
-      <logo />
+      <img src="../static/logo.png" alt="the web ui guy main logo">
       <h1 class="title">
-        thewebuiguy
+        TheWebUiGuy
       </h1>
       <h2 class="subtitle">
-        my website in nuxt
+        Please bear with us while we're doing some remodelling.
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
-      </div>
     </div>
   </section>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
-import Logo from '~/components/Logo.vue'
 
 export default {
-  components: {
-    Logo
-  },
   created() {
     this.getPortfolioItems()
   },
