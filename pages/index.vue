@@ -6,7 +6,7 @@
         TheWebUiGuy
       </h1>
       <h2 class="subtitle">
-        Please bear with us while we're doing some remodelling.
+        Please bear with us while we're doing some remodeling.
       </h2>
     </div>
   </section>
