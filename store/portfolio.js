@@ -8,8 +8,8 @@ export const state = () => ({
 })
 
 export const actions = {
-  getPortfolioItems: async ({ commit }) => {
-    const [err, response] = await to(this.$axios.$get('/v2/portfolio-api?_embed'));
+  async getPortfolioItems({ commit }) {
+    const [err, response] = await to(this.$axios.get('/v2/portfolio-api?_embed'))
     if (!err && response) {
       commit(GET_PORTFOLIO_SUCCESS, response.data)
     }
