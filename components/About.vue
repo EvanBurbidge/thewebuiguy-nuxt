@@ -14,7 +14,7 @@
         :src="aboutMeImg"
         alt="an image of me in ibiza"
         aspect-ratio="1"
-        class="grey lighten-2"
+        class="primary about-me-img"
         width="100%"
       />
     </v-flex>
@@ -22,7 +22,6 @@
       md6
       sm12
       xs12
-      pa-1
     >
       <p>
         About me
@@ -42,7 +41,8 @@ export default {
 </script>
 
 <style scoped>
-  img.about-me-img {
+  .about-me-img {
     border-radius: 50%;
+    border: 3px solid transparent;
   }
 </style>
