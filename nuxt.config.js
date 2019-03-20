@@ -38,12 +38,22 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/vuetify'
   ],
   axios: {
     proxy: true // Can be also an object with default options
+  },
+  vuetify: {
+    materialIcons: true,
+    css: true,
+    treeShake: true,
+    theme: {
+      primary: '#0083aa',
+      secondary: '#094A5D',
+      error: '#B71243',
+      accent: '#56964b'
+    }
   },
   proxy: {
     '/v2/': 'http://thewebuiguy.com/wp-json/wp/'
@@ -53,6 +63,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    transpile: [/^vuetify/],
     /*
     ** You can extend webpack config here
     */
