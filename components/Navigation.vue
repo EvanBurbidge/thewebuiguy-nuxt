@@ -2,7 +2,7 @@
   <v-toolbar color="transparent">
     <v-toolbar-title>
       <img
-        src="../static/logo.png"
+        :src="logo"
         alt="the main webuiguy logo"
         class="main-logo"
       >
@@ -35,6 +35,16 @@
     </v-toolbar-items>
   </v-toolbar>
 </template>
+
+<script>
+import logo from '../static/logo.png'
+
+export default {
+  data: () => ({
+    logo
+  })
+}
+</script>
 
 <style scoped>
   img.main-logo {
