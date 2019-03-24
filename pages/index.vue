@@ -2,15 +2,6 @@
   <div>
     <AboutMe />
     <BlogList :blogs="blogs" />
-    <div>
-      <img src="../static/logo.png" alt="the web ui guy main logo">
-      <h1 class="title">
-        TheWebUiGuy
-      </h1>
-      <h2 class="subtitle">
-        <!--Please bear with us while we're doing some remodeling.-->
-      </h2>
-    </div>
   </div>
 </template>
 
