@@ -19,8 +19,7 @@ export default {
     const blogs = Blogs
 
     async function asyncImport(blogName) {
-      const wholeMD = await import(`../data/blog/${blogName}.md`)
-      console.warn(wholeMD.attributes)
+      const wholeMD = await import(`../data/blog/${blogName}/readme.md`)
       return wholeMD.attributes
     }
     return Promise.all(blogs.map(blog => asyncImport(blog.title)))

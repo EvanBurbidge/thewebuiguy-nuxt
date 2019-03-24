@@ -21,8 +21,8 @@ import t from 'vue-types'
 
 export default {
   props: {
-    title: t.string.isRequired,
-    subtitle: t.string
+    title: t.string.isRequired.def(''),
+    subtitle: t.string.def('')
   }
 }
 </script>
