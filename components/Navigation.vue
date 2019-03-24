@@ -16,7 +16,9 @@
     </v-toolbar-items>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn flat>
-        About Me
+        <nuxt-link class="nav-item" to="/dynamic/About">
+          About
+        </nuxt-link>
       </v-btn>
       <v-btn flat>
         Portfolio

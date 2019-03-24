@@ -1,3 +1,6 @@
+import files from './data/blog'
+
+const path = require('path')
 const pkg = require('./package')
 
 module.exports = {
@@ -58,7 +61,10 @@ module.exports = {
   proxy: {
     '/v2/': 'http://thewebuiguy.com/wp-json/wp/'
   },
-
+  generate: {
+    routes: []
+      .concat(files.map(w => `/post/${w.title}`))
+  },
   /*
   ** Build configuration
   */
@@ -69,6 +75,14 @@ module.exports = {
     */
     extend(config, ctx) {
       // Run ESLint on save
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: 'frontmatter-markdown-loader',
+        include: path.resolve(__dirname, 'data'),
+        options: {
+          vue: true
+        }
+      })
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',

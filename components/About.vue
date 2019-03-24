@@ -5,7 +5,7 @@
     row
   >
     <v-flex
-      md6
+      md3
       sm12
       xs12
       xxs12
@@ -19,7 +19,7 @@
       />
     </v-flex>
     <v-flex
-      md6
+      md9
       sm12
       xs12
     >

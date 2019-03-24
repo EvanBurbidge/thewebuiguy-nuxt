@@ -4,7 +4,7 @@ export const GET_PORTFOLIO_SUCCESS = 'GET_PORTFOLIO_SUCCESS'
 
 export const state = () => ({
   portfolioItems: [],
-  selectedItem: []
+  selectedItem: {}
 })
 
 export const actions = {
