@@ -8,7 +8,7 @@
 <script>
 import Blogs from '../data/blog'
 import AboutMe from '../components/About.vue'
-import BlogList from '../components/BlogList.vue'
+import BlogList from '../components/blog/BlogList.vue'
 
 export default {
   components: {
