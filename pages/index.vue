@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Hi Linda</h1>
     <AboutMe />
     <BlogList :blogs="blogs" />
   </div>
