@@ -1,11 +1,13 @@
 <template>
   <v-toolbar color="transparent">
     <v-toolbar-title>
-      <img
-        :src="logo"
-        alt="the main webuiguy logo"
-        class="main-logo"
-      >
+      <nuxt-link to="/">
+        <img
+          :src="logo"
+          alt="the main webuiguy logo"
+          class="main-logo"
+        >
+      </nuxt-link>
     </v-toolbar-title>
     <v-spacer />
     <v-toolbar-items class="hidden-md-and-up">

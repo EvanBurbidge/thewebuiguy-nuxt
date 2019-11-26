@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Hi Linda</h1>
     <AboutMe />
     <BlogList :blogs="blogs" />
   </div>
@@ -24,9 +23,12 @@ export default {
       return wholeMD.attributes
     }
     return Promise.all(blogs.map(blog => asyncImport(blog.title)))
-      .then(res => ({
-        blogs: res
-      }))
+      .then((res) => {
+        console.warn(res)
+        return {
+          blogs: res
+        }
+      })
   }
 }
 </script>

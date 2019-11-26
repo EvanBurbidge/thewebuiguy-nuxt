@@ -4,17 +4,17 @@
       title="Blog"
       subtitle="Thoughts, musings, some work i've done"
     />
-
     <v-layout
       align-space-around
       justify-center
-      row
       fill-height
     >
       <v-flex
         pa-1
         v-for="(blog, idx) in blogs"
         md4
+        sm6
+        xs12
         :key="idx">
         <blog-list-card
           :blog-item="blog"

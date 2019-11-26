@@ -1,9 +1,10 @@
 ---
-name: 'Rabbitode'
+name: 'rabbitode'
 title: Abstracting Rabbits
 year: 30 March 2019
 color: '#0083aa'
 id: 'rabbitode-blog'
+author: 'evanb54'
 description: |
   An introduction to RabbitMQ an abstraction of RabbitMQ and AMQP lib methods.
 ---

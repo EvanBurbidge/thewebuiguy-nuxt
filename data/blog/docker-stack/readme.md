@@ -3,6 +3,7 @@ name: 'docker-stack'
 title: Docker Stack
 year: 30 March 2019
 color: '#0083aa'
+author: 'evanb54'
 id: 'docker-stack-blog'
 description: |
   An introduction to Docker Stack and using it to deploy applications
