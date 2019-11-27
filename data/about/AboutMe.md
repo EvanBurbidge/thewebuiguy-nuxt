@@ -1,5 +1,11 @@
 ## Hello
 
+I'm Evan, I'm currently the Lead Frontend Engineer at Visma Labs, I'm primarily working on the Visma InSchool Project. 
+I'm a full stack developer, using a Full Stack range of JS technologies, e.g. MongoDB, ExpressJS, VueJS, Typescript.
+
+I have Authored a number of NPM packages such as Rabbitode, JS-File-Req and many more. 
+
+
 My name is Evan, I've been a developer now for the past 4 years working mainly with frontend technologies in my day job, 
 but at the same time exploring the backend through NodeJS, MongoDB, Sql and much more. At the moment I am a Senior Frontend Engineer
 at VSWare, an education cloud services provider based in Dublin City Center, with clients in Norway, Uk and Ireland. In the past I have worked for Risk.Ident Gmbh, in Hamburg, who provide a Machine Learning fraud prevention platform. Before that I 

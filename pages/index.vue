@@ -1,22 +1,41 @@
 <template>
   <div>
-    <IntroTile/>
-    <AboutMe />
-    <BlogList :blogs="blogs" />
+    <IntroTile />
+    <div class="web-section" id="about-section">
+      <AboutMe />
+    </div>
+    <div class="web-section" id="blog-section" background="white">
+      <BlogList :blogs="blogs" />
+    </div>
+    <div class="web-section" id="testimonials-section" background="white">
+      <Testimonials />
+    </div>
+    <div class="web-section" id="services-section" background="white">
+      <Services />
+    </div>
+    <div class="web-section" id="contact-section" background="white">
+      <Contact />
+    </div>
   </div>
 </template>
 
 <script>
 import Blogs from '../data/blog'
 import AboutMe from '../components/About.vue'
+import Services from '../components/Services.vue'
+import Contact from '../components/Contact.vue'
 import IntroTile from '../components/IntroTile.vue'
+import Testimonials from '../components/Testimonials.vue'
 import BlogList from '../components/blog/BlogList.vue'
 
 export default {
   components: {
     AboutMe,
     BlogList,
-    IntroTile
+    IntroTile,
+    Testimonials,
+    Services,
+    Contact
   },
   asyncData() {
     const blogs = Blogs
@@ -32,3 +51,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .web-section {
+    padding: 25px 0;
+  }
+</style>

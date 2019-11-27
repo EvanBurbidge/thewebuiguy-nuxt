@@ -17,21 +17,19 @@
       />
     </v-toolbar-items>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>
-        <nuxt-link class="nav-item" to="/dynamic/About">
-          About
-        </nuxt-link>
+      <v-btn flat v-scroll-to="'#about-section'">
+        About
       </v-btn>
-      <v-btn flat>
-        Portfolio
+      <v-btn flat v-scroll-to="'#blog-section'">
+        Blog
       </v-btn>
-      <v-btn flat>
+      <v-btn flat v-scroll-to="'#testimonials-section'">
         Testimonials
       </v-btn>
-      <v-btn flat>
+      <v-btn flat v-scroll-to="'#services-section'">
         Services
       </v-btn>
-      <v-btn flat>
+      <v-btn flat v-scroll-to="'#contact-section'">
         Contact Me
       </v-btn>
     </v-toolbar-items>

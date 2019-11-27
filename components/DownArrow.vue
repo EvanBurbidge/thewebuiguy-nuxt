@@ -1,5 +1,5 @@
 <template>
-  <div class="pos down-arrow"></div>
+  <div class="pos down-arrow" v-scroll-to="'#about-section'"></div>
 </template>
 
 <style scoped>

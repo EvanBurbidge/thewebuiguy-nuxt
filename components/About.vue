@@ -3,9 +3,10 @@
     <SectionHeading
       title="About Me"
       subtitle="A little bit about myself"
+      class="web-section"
     />
     <v-layout
-      align-start
+      align-center
       justify-space-around
       row
       wrap

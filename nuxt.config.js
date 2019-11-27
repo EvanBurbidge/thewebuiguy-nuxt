@@ -42,7 +42,9 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    // Or if you have custom options...
+    ['vue-scrollto/nuxt', { duration: 300 }]
   ],
   axios: {
     proxy: true // Can be also an object with default options

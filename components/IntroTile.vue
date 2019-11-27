@@ -52,8 +52,8 @@ export default {
       }
     }
     &-wrapper {
-      background: #FFFFFF;
       width: calc(100% + 48px);
+      background: #FFFFFF;
       height: 100vh;
       margin: -24px;
       padding-top: 24px;
