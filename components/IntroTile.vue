@@ -14,12 +14,25 @@
         class="logo"
       />
     </div>
+    <div class="intro-tile-text">
+      <h2 class="display-2">
+        Welcome to my site
+      </h2>
+    </div>
+    <div class="intro-tile-text">
+      <DownArrow />
+    </div>
   </div>
 </template>
 
 <script>
 import logo from '../static/thewebuiguy-logo.jpg'
+import DownArrow from './DownArrow.vue'
+
 export default {
+  components: {
+    DownArrow
+  },
   data: () => ({
     logo
   })
@@ -43,8 +56,9 @@ export default {
       width: calc(100% + 48px);
       height: 100vh;
       margin: -24px;
+      padding-top: 24px;
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
       flex-direction: column;
     }

@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar color="transparent" fixed>
+  <v-toolbar :color="backgroundColor" fixed>
     <v-toolbar-title>
       <nuxt-link to="/">
         <img
@@ -48,6 +48,14 @@ export default {
     scrollPos: 0,
     isTransparent: true
   }),
+  computed: {
+    backgroundColor() {
+      if (this.isTransparent) {
+        return 'transparent'
+      }
+      return 'white'
+    }
+  },
   created() {
     if (process.browser) {
       this.scrollPos = window.scrollY
@@ -66,11 +74,11 @@ export default {
         this.scrollPos = window.scrollY
         console.warn(this.height)
         console.warn(this.scrollPos)
-        // if (this.scrollPos > this.height) {
-        //   this.isTransparent = false
-        // } else {
-        //   this.isTransparent = true
-        // }
+        if (this.scrollPos > this.height) {
+          this.isTransparent = false
+        } else {
+          this.isTransparent = true
+        }
       }
     }
   }
