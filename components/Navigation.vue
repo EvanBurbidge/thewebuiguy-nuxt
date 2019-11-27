@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar color="transparent">
+  <v-toolbar color="transparent" fixed>
     <v-toolbar-title>
       <nuxt-link to="/">
         <img
@@ -43,8 +43,37 @@ import logo from '../static/logo.png'
 
 export default {
   data: () => ({
-    logo
-  })
+    logo,
+    height: 0,
+    scrollPos: 0,
+    isTransparent: true
+  }),
+  created() {
+    if (process.browser) {
+      this.scrollPos = window.scrollY
+      this.height = window.innerHeight - 65
+      window.addEventListener('scroll', e => this.getScrollPos(e), false)
+    }
+  },
+  destroyed() {
+    if (process.browser) {
+      window.removeEventListener('scroll', this.getScrollPos)
+    }
+  },
+  methods: {
+    getScrollPos() {
+      if (process.browser) {
+        this.scrollPos = window.scrollY
+        console.warn(this.height)
+        console.warn(this.scrollPos)
+        // if (this.scrollPos > this.height) {
+        //   this.isTransparent = false
+        // } else {
+        //   this.isTransparent = true
+        // }
+      }
+    }
+  }
 }
 </script>
 

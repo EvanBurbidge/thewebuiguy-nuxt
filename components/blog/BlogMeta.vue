@@ -8,7 +8,7 @@
         />
         <v-list>
             <v-list-tile>
-                <h1 class="display-3">
+                <h1 class="title">
                     {{ blog.attributes.title }}
                 </h1>
             </v-list-tile>
@@ -16,7 +16,7 @@
                 <v-icon>
                     perm_identity
                 </v-icon>
-                <h5 class="subtitle -1">
+                <h5 class="subtitle-1">
                     {{ blog.attributes.author }}
                 </h5>
             </v-list-tile>
@@ -24,7 +24,7 @@
                 <v-icon>
                     calendar_today
                 </v-icon>
-                <h5 class="subtitle -1">
+                <h5 class="subtitle-1">
                     {{ blog.attributes.year }}
                 </h5>
             </v-list-tile>
