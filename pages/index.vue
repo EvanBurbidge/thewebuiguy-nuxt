@@ -13,7 +13,7 @@
     <div id="services-section" class="web-section" background="white">
       <Services />
     </div>
-    <div id="contact-section" class="web-section" background="white">
+    <div id="contact-section" class="web-section">
       <Contact />
     </div>
   </div>
@@ -57,7 +57,7 @@ export default {
   .web-section {
     padding: 25px 0;
   }
-
+  #contact-section,
   #testimonials-section {
     background: #0083aa;
   }
