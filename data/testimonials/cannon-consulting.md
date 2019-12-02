@@ -1,10 +1,10 @@
 ---
-name: 'ls-comics'
-title: Ls Comics
+name: 'cannon-consulting'
+title: Cannon consulting
 year: 02 December 2019
 color: '#0083aa'
 author: 'evanb54'
-id: 'ls-comics-testimonial'
+id: 'cannon-consulting-testimonial'
 published: true
 ---
 

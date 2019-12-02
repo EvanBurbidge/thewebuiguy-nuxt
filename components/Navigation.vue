@@ -70,8 +70,6 @@ export default {
     getScrollPos() {
       if (process.browser) {
         this.scrollPos = window.scrollY
-        console.warn(this.height)
-        console.warn(this.scrollPos)
         if (this.scrollPos > this.height) {
           this.isTransparent = false
         } else {

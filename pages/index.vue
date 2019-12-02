@@ -1,19 +1,19 @@
 <template>
   <div>
     <IntroTile />
-    <div class="web-section" id="about-section">
+    <div id="about-section" class="web-section">
       <AboutMe />
     </div>
-    <div class="web-section" id="blog-section" background="white">
+    <div id="blog-section" class="web-section" background="white">
       <BlogList :blogs="blogs" />
     </div>
-    <div class="web-section" id="testimonials-section" background="white">
+    <div id="testimonials-section" class="web-section" background="white">
       <Testimonials />
     </div>
-    <div class="web-section" id="services-section" background="white">
+    <div id="services-section" class="web-section" background="white">
       <Services />
     </div>
-    <div class="web-section" id="contact-section" background="white">
+    <div id="contact-section" class="web-section" background="white">
       <Contact />
     </div>
   </div>
@@ -44,7 +44,8 @@ export default {
       const wholeMD = await import(`../data/blog/${blogName}/readme.md`)
       return wholeMD.attributes
     }
-    return Promise.all(blogs.map(blog => asyncImport(blog.title)))
+
+    return Promise.all(blogs.map(b => asyncImport(b.title)))
       .then(res => ({
         blogs: res
       }))
