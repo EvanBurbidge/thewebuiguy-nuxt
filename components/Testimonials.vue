@@ -5,17 +5,17 @@
     class="wuig-carousel"
   >
     <v-carousel-item
-      v-for="(testimonial, idx) in testimonials"
+      v-for="(testimonial, idx) in formattedTestimonials"
       :key="idx"
       class="wuig-carousel-item"
     >
-      <h3 class="title wuig-carousel-title">
-        {{ testimonial.title }}
-      </h3>
-      <v-divider class="wuig-carousel-divider" />
       <p class="subtitle">
         {{ testimonial.testimonial }}
       </p>
+      <v-divider class="wuig-carousel-divider" />
+      <small class="overview wuig-carousel-title font-italic">
+        {{ testimonial.title }}
+      </small>
     </v-carousel-item>
   </v-carousel>
 </template>
@@ -30,7 +30,7 @@ export default {
   }),
   computed: {
     formattedTestimonials() {
-      return this.testimonials.filter(t => t.attributes.published === true)
+      return this.testimonials.filter(t => !!t.published)
     }
   },
   created() {
@@ -58,10 +58,6 @@ export default {
     box-shadow: none;
     text-align: center;
     background: #0083aa;
-    &-item {
-      margin-right: -25px;
-      vertical-align: center;
-    }
     &-title {
       margin-bottom: 20px;
     }

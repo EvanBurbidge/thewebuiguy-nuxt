@@ -59,7 +59,6 @@ export default {
   }
 
   #testimonials-section {
-    margin: 0 -24px;
     background: #0083aa;
   }
 </style>
