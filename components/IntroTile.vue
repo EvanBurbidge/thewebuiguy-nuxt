@@ -1,7 +1,7 @@
 <template>
   <div class="intro-tile-wrapper">
     <div class="intro-tile-text">
-      <h2 class="display-2">
+      <h2 class="">
         Hello There I'm
       </h2>
     </div>
@@ -15,7 +15,7 @@
       />
     </div>
     <div class="intro-tile-text">
-      <h2 class="display-2">
+      <h2 class="">
         Welcome to my site
       </h2>
     </div>
@@ -46,6 +46,9 @@ export default {
       border-radius: 50%;
       overflow: hidden;
       padding: 20px;
+      @media screen and (max-width: 768px) {
+        width: 50%;
+      }
       .logo {
         width: 100%;
         border: 2px solid #0083aa;
@@ -61,6 +64,11 @@ export default {
       justify-content: space-evenly;
       align-items: center;
       flex-direction: column;
+      @media screen and (max-width: 768px) {
+        text-align: center;
+        width: calc(100% + 48px);
+
+      }
     }
   }
 </style>

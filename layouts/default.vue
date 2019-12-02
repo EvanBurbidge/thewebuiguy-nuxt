@@ -1,14 +1,12 @@
 <template>
   <v-app>
-    <Navigation />
-    <v-container fluid>
-      <v-layout
-        column
-        fill-height
-      >
-        <nuxt />
-      </v-layout>
-    </v-container>
+    <Navigation/>
+    <v-layout
+      column
+      fill-height
+    >
+      <nuxt/>
+    </v-layout>
   </v-app>
 </template>
 

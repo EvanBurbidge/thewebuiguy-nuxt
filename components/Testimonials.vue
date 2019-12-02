@@ -1,12 +1,23 @@
 <template>
-  <div>
-    <pre>{{ testimonials }}</pre>
-  </div>
-<!--  <v-carousel :hide-delimiters="true" class="wuig-carousel">-->
-<!--    <v-carousel-item>-->
-<!--      test-->
-<!--    </v-carousel-item>-->
-<!--  </v-carousel>-->
+  <v-carousel
+    :hide-delimiters="true"
+    :height="100"
+    class="wuig-carousel"
+  >
+    <v-carousel-item
+      v-for="(testimonial, idx) in testimonials"
+      :key="idx"
+      class="wuig-carousel-item"
+    >
+      <h3 class="title wuig-carousel-title">
+        {{ testimonial.title }}
+      </h3>
+      <v-divider class="wuig-carousel-divider" />
+      <p class="subtitle">
+        {{ testimonial.testimonial }}
+      </p>
+    </v-carousel-item>
+  </v-carousel>
 </template>
 
 <script>
@@ -17,6 +28,11 @@ export default {
     testimonialTitles: TestimonialData,
     testimonials: []
   }),
+  computed: {
+    formattedTestimonials() {
+      return this.testimonials.filter(t => t.attributes.published === true)
+    }
+  },
   created() {
     this.getTestimonialsData()
   },
@@ -32,18 +48,26 @@ export default {
         this.testimonials = res
       })
     }
-  },
-  computed: {
-    formattedTestimonials() {
-      return this.testimonials.filter(t => t.attributes.published === true)
-    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
   .wuig-carousel {
+    color: #FFFFFF;
     box-shadow: none;
-    background: #FFFFFF;
+    text-align: center;
+    background: #0083aa;
+    &-item {
+      margin-right: -25px;
+      vertical-align: center;
+    }
+    &-title {
+      margin-bottom: 20px;
+    }
+    &-divider {
+      width: 50%;
+      margin: 0 25% 20px 25%;
+    }
   }
 </style>
