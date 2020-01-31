@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <div>
     <SectionHeading
       title="About Me"
       subtitle="A little bit about myself"
@@ -36,7 +36,7 @@
         <div v-html="about.html"></div>
       </v-flex>
     </v-layout>
-  </v-container>
+  </div>
 </template>
 
 <script>

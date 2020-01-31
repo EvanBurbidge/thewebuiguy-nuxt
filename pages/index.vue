@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <IntroTile />
+  <div class="my-app-wrapper">
+    <IntroTile v-if="!isMobile"/>
     <div id="about-section" class="web-section">
       <AboutMe />
     </div>
@@ -37,6 +37,11 @@ export default {
     Services,
     Contact
   },
+  computed: {
+    isMobile() {
+      return this.$mq === 'xxs' || this.$mq === 'xs' || this.$mq === 'sm'
+    }
+  },
   asyncData() {
     const blogs = Blogs
 
@@ -55,6 +60,6 @@ export default {
 
 <style scoped>
   .web-section {
-    padding: 25px;
+    padding: 25px 20px;
   }
 </style>

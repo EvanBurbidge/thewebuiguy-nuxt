@@ -4,12 +4,12 @@
       title="Blog"
       subtitle="Thoughts, musings, some work i've done"
     />
-    <v-layout
+    <v-row
       align-space-around
       justify-center
       fill-height
     >
-      <v-flex
+      <v-col
         pa-1
         v-for="(blog, idx) in blogs"
         md4
@@ -19,8 +19,8 @@
         <blog-list-card
           :blog-item="blog"
         />
-      </v-flex>
-    </v-layout>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
