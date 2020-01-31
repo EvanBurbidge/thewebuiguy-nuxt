@@ -1,23 +1,9 @@
 <template>
-  <v-carousel
-    :hide-delimiters="true"
-    :height="100"
-    class="wuig-carousel"
-  >
-    <v-carousel-item
-      v-for="(testimonial, idx) in formattedTestimonials"
-      :key="idx"
-      class="wuig-carousel-item"
-    >
-      <p class="subtitle">
-        {{ testimonial.testimonial }}
-      </p>
-      <v-divider class="wuig-carousel-divider" />
-      <small class="overview wuig-carousel-title font-italic">
-        {{ testimonial.title }}
-      </small>
-    </v-carousel-item>
-  </v-carousel>
+  <div>
+    <template v-for="test in testimonials">
+      {{  test.title }}
+    </template>
+  </div>
 </template>
 
 <script>

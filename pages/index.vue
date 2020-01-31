@@ -55,10 +55,6 @@ export default {
 
 <style scoped>
   .web-section {
-    padding: 25px 0;
-  }
-  #contact-section,
-  #testimonials-section {
-    background: #0083aa;
+    padding: 25px;
   }
 </style>
