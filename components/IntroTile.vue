@@ -1,5 +1,10 @@
 <template>
   <div class="intro-tile-wrapper">
+    <div class="intro-tile-text">
+      <h2 class="intro-tile-text-heading display-3 text-light">
+        Welcome, I'm
+      </h2>
+    </div>
     <div
       v-if="!isMobile"
       class="intro-tile-image"
@@ -11,14 +16,6 @@
         aspect-ratio="1"
         class="logo"
       />
-    </div>
-    <div class="intro-tile-text">
-      <h2 class="intro-tile-text-heading display-3 text-light">
-        Hello There I'm TheWebUiGuy
-      </h2>
-      <h2 class="intro-tile-text-heading display-3 text-light text-xs-white">
-        Welcome to my site
-      </h2>
     </div>
   </div>
 </template>
@@ -50,7 +47,7 @@ export default {
     &-image {
       width: 15%;
       z-index: 1;
-      padding: 20px;
+      padding: 15px;
       overflow: hidden;
       border-radius: 50%;
       @media screen and (max-width: 768px) {
@@ -68,15 +65,15 @@ export default {
     }
 
     &-wrapper {
-      position: relative;
+      width: 100%;
       display: flex;
       height: 100vh;
-      padding-top: 24px;
+      position: relative;
       flex-direction: row;
       align-items: center;
-      width: 100%;
       background: #FFFFFF;
-      justify-content: space-evenly;
+      justify-content: center;
+      border-bottom: 1px solid #0083aa;
       @media screen and (max-width: 768px) {
         width: calc(100% + 48px);
       }
@@ -89,9 +86,9 @@ export default {
         width: 0;
         height: 0;
         z-index: 0;
-        border-bottom: 700px solid #0083aa;
-        border-left: 600px solid transparent;
-        border-top: 700px solid darken(#0083aa, 5);
+        border-bottom: 600px solid #0083aa;
+        border-left: 700px solid transparent;
+        border-top: 490px solid darken(#0083aa, 5);
       }
 
       &::before {

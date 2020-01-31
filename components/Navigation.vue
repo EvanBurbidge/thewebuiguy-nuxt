@@ -1,5 +1,9 @@
 <template>
-  <v-toolbar :color="backgroundColor" fixed>
+  <v-toolbar
+    :style="{...stylesForFixed, 'z-index': 2}"
+    :color="backgroundColor"
+    flat
+  >
     <v-toolbar-title>
       <nuxt-link to="/">
         <img
@@ -12,24 +16,43 @@
     <v-spacer />
     <v-toolbar-items class="hidden-md-and-up">
       <v-toolbar-side-icon
-        flat
+        text
         color="primary"
       />
     </v-toolbar-items>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat v-scroll-to="'#about-section'">
+      <v-btn
+        v-scroll-to="'#about-section'"
+        text
+      >
         About
       </v-btn>
-      <v-btn flat v-scroll-to="'#blog-section'">
+      <v-btn
+        v-scroll-to="'#blog-section'"
+        :dark="isTransparent"
+        text
+      >
         Blog
       </v-btn>
-      <v-btn flat v-scroll-to="'#testimonials-section'">
+      <v-btn
+        v-scroll-to="'#testimonials-section'"
+        :dark="isTransparent"
+        text
+      >
         Testimonials
       </v-btn>
-      <v-btn flat v-scroll-to="'#services-section'">
+      <v-btn
+        v-scroll-to="'#services-section'"
+        :dark="isTransparent"
+        text
+      >
         Services
       </v-btn>
-      <v-btn flat v-scroll-to="'#contact-section'">
+      <v-btn
+        v-scroll-to="'#contact-section'"
+        :dark="isTransparent"
+        text
+      >
         Contact Me
       </v-btn>
     </v-toolbar-items>
@@ -47,6 +70,24 @@ export default {
     isTransparent: true
   }),
   computed: {
+    stylesForFixed() {
+      if (!this.isTransparent) {
+        return {
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: `100%`,
+          'border-bottom': `1px solid #0083aa`
+        }
+      }
+      return {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: `100%`,
+        'border-bottom': `1px solid #0083aa`
+      }
+    },
     backgroundColor() {
       if (this.isTransparent) {
         return 'transparent'
@@ -69,6 +110,7 @@ export default {
   methods: {
     getScrollPos() {
       if (process.browser) {
+        console.warn('is this cunt scrolling?')
         this.scrollPos = window.scrollY
         if (this.scrollPos > this.height) {
           this.isTransparent = false
