@@ -23,6 +23,7 @@
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn
         v-scroll-to="'#about-section'"
+        :dark="isTransparent"
         text
       >
         About
@@ -81,7 +82,6 @@ export default {
         }
       }
       return {
-        position: 'fixed',
         top: 0,
         left: 0,
         width: `100%`,

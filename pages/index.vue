@@ -1,6 +1,6 @@
 <template>
   <div class="my-app-wrapper">
-    <IntroTile v-if="!isMobile"/>
+    <IntroTile v-show="!isMobile" />
     <div id="about-section" class="web-section">
       <AboutMe />
     </div>
