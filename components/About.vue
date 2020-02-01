@@ -5,14 +5,14 @@
       subtitle="A little bit about myself"
       class="web-section"
     />
-    <v-layout
+    <v-row
       align-center
       justify-space-around
       row
       wrap
       fill-height
     >
-      <v-flex
+      <v-col
         md3
         sm12
         xs12
@@ -25,7 +25,7 @@
           class="primary about-me-img"
           width="100%"
         />
-      </v-flex>
+      </v-col>
       <v-flex
         md8
         pa-2
@@ -35,7 +35,7 @@
       >
         <div v-html="about.html"></div>
       </v-flex>
-    </v-layout>
+    </v-row>
   </div>
 </template>
 
@@ -58,6 +58,10 @@ export default {
 <style scoped>
   .about-me-img {
     border-radius: 50%;
-    border: 3px solid transparent;
+    border: 3px solid #0083aa;
+  }
+  a {
+    color: #0083aa !important;
+    text-decoration: none !important;
   }
 </style>

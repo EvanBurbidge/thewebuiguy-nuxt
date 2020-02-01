@@ -71,37 +71,15 @@ export default {
       position: relative;
       flex-direction: row;
       align-items: center;
-      background: #FFFFFF;
+      background-size: cover;
+      margin-top: -64px;
+      background-image: url("../assets/homeBg.png");
       justify-content: center;
       border-bottom: 1px solid #0083aa;
       @media screen and (max-width: 768px) {
         width: calc(100% + 48px);
       }
 
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 0;
-        height: 0;
-        z-index: 0;
-        border-bottom: 600px solid #0083aa;
-        border-left: 700px solid transparent;
-        border-top: 490px solid darken(#0083aa, 5);
-      }
-
-      &::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 0;
-        height: 0;
-        z-index: 0;
-        border-bottom: 700px solid darken(#0083aa, 10);;
-        border-left: 700px solid transparent;
-      }
     }
   }
 </style>

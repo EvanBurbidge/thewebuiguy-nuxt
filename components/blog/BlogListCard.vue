@@ -16,7 +16,7 @@
     <v-card-actions>
       <v-btn
         :to="`post/${blogItem.name}`"
-        flat
+        text
         color="primary"
       >
         Read More

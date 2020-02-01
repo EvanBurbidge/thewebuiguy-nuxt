@@ -1,63 +1,59 @@
 <template>
-  <v-toolbar
-    :style="{...stylesForFixed, 'z-index': 2}"
-    :color="backgroundColor"
-    flat
-  >
-    <v-toolbar-title>
-      <nuxt-link to="/">
-        <img
-          :src="logo"
-          alt="the main webuiguy logo"
-          class="main-logo"
+  <transition>
+    <v-toolbar
+      :style="{...stylesForFixed, 'z-index': 2}"
+      :color="backgroundColor"
+      :flat="isTransparent"
+    >
+      <v-toolbar-title>
+        <nuxt-link to="/">
+          <img
+            :src="logo"
+            alt="the main webuiguy logo"
+            class="main-logo"
+          >
+        </nuxt-link>
+      </v-toolbar-title>
+      <v-spacer />
+      <v-toolbar-items class="hidden-xs-and-down">
+        <v-btn
+          v-scroll-to="'#about-section'"
+          :dark="isTransparent"
+          text
         >
-      </nuxt-link>
-    </v-toolbar-title>
-    <v-spacer />
-    <v-toolbar-items class="hidden-md-and-up">
-      <v-toolbar-side-icon
-        text
-        color="primary"
-      />
-    </v-toolbar-items>
-    <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn
-        v-scroll-to="'#about-section'"
-        :dark="isTransparent"
-        text
-      >
-        About
-      </v-btn>
-      <v-btn
-        v-scroll-to="'#blog-section'"
-        :dark="isTransparent"
-        text
-      >
-        Blog
-      </v-btn>
-      <v-btn
-        v-scroll-to="'#testimonials-section'"
-        :dark="isTransparent"
-        text
-      >
-        Testimonials
-      </v-btn>
-      <v-btn
-        v-scroll-to="'#services-section'"
-        :dark="isTransparent"
-        text
-      >
-        Services
-      </v-btn>
-      <v-btn
-        v-scroll-to="'#contact-section'"
-        :dark="isTransparent"
-        text
-      >
-        Contact Me
-      </v-btn>
-    </v-toolbar-items>
-  </v-toolbar>
+          About
+        </v-btn>
+        <v-btn
+          v-scroll-to="'#blog-section'"
+          :dark="isTransparent"
+          text
+        >
+          Blog
+        </v-btn>
+        <v-btn
+          v-scroll-to="'#testimonials-section'"
+          :dark="isTransparent"
+          text
+        >
+          Testimonials
+        </v-btn>
+        <v-btn
+          v-scroll-to="'#services-section'"
+          :dark="isTransparent"
+          text
+        >
+          Services
+        </v-btn>
+        <v-btn
+          v-scroll-to="'#contact-section'"
+          :dark="isTransparent"
+          text
+        >
+          Contact Me
+        </v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
+  </transition>
 </template>
 
 <script>
@@ -78,6 +74,7 @@ export default {
           top: 0,
           left: 0,
           width: `100%`,
+          transition: 'top 1s linear',
           'border-bottom': `1px solid #0083aa`
         }
       }
@@ -85,6 +82,7 @@ export default {
         top: 0,
         left: 0,
         width: `100%`,
+        transition: 'top 1s linear',
         'border-bottom': `1px solid #0083aa`
       }
     },
@@ -110,7 +108,6 @@ export default {
   methods: {
     getScrollPos() {
       if (process.browser) {
-        console.warn('is this cunt scrolling?')
         this.scrollPos = window.scrollY
         if (this.scrollPos > this.height) {
           this.isTransparent = false

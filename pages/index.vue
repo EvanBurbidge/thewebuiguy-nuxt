@@ -4,7 +4,7 @@
     <div id="about-section" class="web-section">
       <AboutMe />
     </div>
-    <div id="blog-section" class="web-section" background="white">
+    <div id="blog-section" class="web-section">
       <BlogList :blogs="blogs" />
     </div>
     <div id="testimonials-section" class="web-section" background="white">
@@ -61,5 +61,14 @@ export default {
 <style scoped>
   .web-section {
     padding: 25px 20px;
+  }
+
+  #about-section {
+    background: #f8f8f8;
+  }
+
+  #blog-section,
+  #services-section {
+    background: #FFFFFF;
   }
 </style>
