@@ -73,6 +73,8 @@ export default {
       align-items: center;
       background-size: cover;
       margin-top: -64px;
+      background-position: right;
+      background-repeat: no-repeat;
       background-image: url("../assets/homeBg.png");
       justify-content: center;
       border-bottom: 1px solid #0083aa;
