@@ -7,14 +7,8 @@
     <div id="blog-section" class="web-section">
       <BlogList :blogs="blogs" />
     </div>
-    <div id="testimonials-section" class="web-section" background="white">
-      <Testimonials />
-    </div>
-    <div id="services-section" class="web-section" background="white">
-      <Services />
-    </div>
     <div id="contact-section" class="web-section">
-      <Contact />
+      <contact />
     </div>
   </div>
 </template>
@@ -33,8 +27,11 @@ export default {
     AboutMe,
     BlogList,
     IntroTile,
+    // eslint-disable-next-line vue/no-unused-components
     Testimonials,
+    // eslint-disable-next-line vue/no-unused-components
     Services,
+    // eslint-disable-next-line vue/no-unused-components
     Contact
   },
   computed: {
@@ -52,18 +49,22 @@ export default {
 
     return Promise.all(blogs.map(b => asyncImport(b.title)))
       .then(res => ({
-        blogs: res
+        blogs: res.filter(r => r.published)
       }))
   }
 }
 </script>
 
-<style scoped>
+<style>
+  a {
+    color: #0083aa !important;
+  }
   .web-section {
     padding: 25px 20px;
   }
 
-  #about-section {
+  #about-section,
+  #contact-section {
     background: #f8f8f8;
   }
 

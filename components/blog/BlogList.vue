@@ -10,13 +10,14 @@
       fill-height
     >
       <v-col
+        v-for="(blog, idx) in blogs"
+        :key="idx"
         pa-1
         md="4"
         sm="6"
         xs="12"
         cols="12"
-        v-for="(blog, idx) in blogs"
-        :key="idx">
+      >
         <blog-list-card
           :blog-item="blog"
         />

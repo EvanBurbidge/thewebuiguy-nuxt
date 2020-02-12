@@ -1,5 +1,5 @@
 <template>
-  <v-layout row align-start pa-2>
+  <v-layout class="blog-wrap">
     <v-flex pa-3 xs12 sm3 md3 lg3>
       <v-card style="padding: 20px">
         <blog-meta :blog="blog" />
@@ -7,6 +7,11 @@
     </v-flex>
     <v-flex xs12 sm9 md9 lg9 pa-3>
       <v-card style="padding: 20px">
+        <h1 class="display-1">
+          {{ blog.attributes.title }}
+        </h1>
+        <hr />
+        <br>
         <div v-html="blog.html" />
       </v-card>
     </v-flex>
@@ -32,3 +37,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.blog-wrap {
+  margin-top: 70px !important;
+  padding: 0 20px;
+}
+</style>

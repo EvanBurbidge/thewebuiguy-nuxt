@@ -80,6 +80,7 @@ export default {
       border-bottom: 1px solid #0083aa;
       @media screen and (max-width: 768px) {
         width: calc(100% + 48px);
+        background: #FFFFFF;
       }
 
     }

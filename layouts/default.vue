@@ -1,11 +1,11 @@
 <template>
   <v-app>
-    <Navigation/>
+    <Navigation />
     <v-layout
       column
       fill-height
     >
-      <nuxt/>
+      <nuxt />
     </v-layout>
   </v-app>
 </template>

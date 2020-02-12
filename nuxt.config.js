@@ -17,7 +17,12 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: './favicon.ico' },
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: 'favicon.ico'
+      }
     ]
   },
 
@@ -45,7 +50,20 @@ module.exports = {
     '@nuxtjs/vuetify',
     'nuxt-mq',
     // Or if you have custom options...
-    ['vue-scrollto/nuxt', { duration: 300 }]
+    ['vue-scrollto/nuxt', { duration: 300 }],
+    ['nuxt-fontawesome', {
+      component: 'fa',
+      imports: [
+        {
+          set: '@fortawesome/fontawesome-free-brands',
+          icons: ['faFacebook', 'faTwitter', 'faLinkedin']
+        },
+        {
+          set: '@fortawesome/fontawesome-free-solid',
+          icons: ['faCalendar', 'faUser']
+        }
+      ]
+    }]
   ],
   axios: {
     proxy: true // Can be also an object with default options

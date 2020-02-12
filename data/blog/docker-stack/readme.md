@@ -5,6 +5,7 @@ year: 30 March 2019
 color: '#0083aa'
 author: 'evanb54'
 id: 'docker-stack-blog'
+published: false
 description: |
   An introduction to Docker Stack and using it to deploy applications
 ---

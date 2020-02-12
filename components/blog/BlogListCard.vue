@@ -8,8 +8,8 @@
     />
     <v-divider />
     <v-card-title>
-      <h3>{{ blogItem.title }}</h3>
-      <p>
+      <h3 class="title">{{ blogItem.title }}</h3>
+      <p class="caption">
         {{ blogItem.description }}
       </p>
     </v-card-title>

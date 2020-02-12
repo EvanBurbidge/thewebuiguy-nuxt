@@ -6,28 +6,24 @@
       :alt="blog.attributes.title"
       aspect-ratio="1.6"
     />
-    <v-list>
-      <v-list-tile>
+    <v-list class="text-capitalize">
+      <v-list-item>
         <h1 class="title">
           {{ blog.attributes.title }}
         </h1>
-      </v-list-tile>
-      <v-list-tile>
-        <v-icon>
-          perm_identity
-        </v-icon>
+      </v-list-item>
+      <v-list-item>
+        <fa :icon="['fas', 'user']" class="meta-icon"></fa>
         <h5 class="subtitle-1">
           {{ blog.attributes.author }}
         </h5>
-      </v-list-tile>
-      <v-list-tile>
-        <v-icon>
-          calendar_today
-        </v-icon>
+      </v-list-item>
+      <v-list-item>
+        <fa :icon="['fas', 'calendar']" class="meta-icon"></fa>
         <h5 class="subtitle-1">
           {{ blog.attributes.year }}
         </h5>
-      </v-list-tile>
+      </v-list-item>
     </v-list>
   </div>
 </template>
@@ -42,3 +38,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.meta-icon {
+  margin-right: 10px;
+  color: #0083aa;
+}
+</style>

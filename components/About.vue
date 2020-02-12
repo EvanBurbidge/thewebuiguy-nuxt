@@ -6,17 +6,12 @@
       class="web-section"
     />
     <v-row
-      align-center
-      justify-space-around
-      row
-      wrap
-      fill-height
+      align="center"
+      justify="space-around"
     >
       <v-col
-        md3
-        sm12
-        xs12
-        xxs12
+        md="3"
+        xxs="12"
       >
         <v-img
           :src="aboutMeImg"
