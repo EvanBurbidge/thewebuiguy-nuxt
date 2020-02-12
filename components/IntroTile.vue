@@ -67,7 +67,7 @@ export default {
     &-wrapper {
       width: 100%;
       display: flex;
-      height: 100vh;
+      height: calc(100vh + 64px);
       position: relative;
       flex-direction: row;
       align-items: center;
