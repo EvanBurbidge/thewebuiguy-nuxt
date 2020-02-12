@@ -1,3 +1,6 @@
+import files from './data/blog'
+
+const path = require('path')
 const pkg = require('./package')
 
 module.exports = {
@@ -14,7 +17,12 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: './favicon.ico' },
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: 'favicon.ico'
+      }
     ]
   },
 
@@ -38,26 +46,64 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/vuetify',
+    'nuxt-mq',
+    // Or if you have custom options...
+    ['vue-scrollto/nuxt', { duration: 300 }],
+    ['nuxt-fontawesome', {
+      component: 'fa',
+      imports: [
+        {
+          set: '@fortawesome/fontawesome-free-brands',
+          icons: ['faFacebook', 'faTwitter', 'faLinkedin']
+        },
+        {
+          set: '@fortawesome/fontawesome-free-solid',
+          icons: ['faCalendar', 'faUser']
+        }
+      ]
+    }]
   ],
   axios: {
     proxy: true // Can be also an object with default options
   },
+  vuetify: {
+    materialIcons: true,
+    css: true,
+    treeShake: true,
+    theme: {
+      primary: '#0083aa',
+      secondary: '#094A5D',
+      error: '#B71243',
+      accent: '#56964b'
+    }
+  },
   proxy: {
     '/v2/': 'http://thewebuiguy.com/wp-json/wp/'
   },
-
+  generate: {
+    routes: []
+      .concat(files.map(w => `/post/${w.title}`))
+  },
   /*
   ** Build configuration
   */
   build: {
+    transpile: [/^vuetify/],
     /*
     ** You can extend webpack config here
     */
     extend(config, ctx) {
       // Run ESLint on save
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: 'frontmatter-markdown-loader',
+        include: path.resolve(__dirname, 'data'),
+        options: {
+          vue: true
+        }
+      })
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',

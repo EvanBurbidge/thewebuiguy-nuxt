@@ -1,61 +1,75 @@
 <template>
-  <section class="container">
-    <div>
-      <img src="../static/logo.png" alt="the web ui guy main logo">
-      <h1 class="title">
-        TheWebUiGuy
-      </h1>
-      <h2 class="subtitle">
-        Please bear with us while we're doing some remodeling.
-      </h2>
+  <div class="my-app-wrapper">
+    <IntroTile v-if="!isMobile"/>
+    <div id="about-section" class="web-section">
+      <AboutMe />
     </div>
-  </section>
+    <div id="blog-section" class="web-section">
+      <BlogList :blogs="blogs" />
+    </div>
+    <div id="contact-section" class="web-section">
+      <contact />
+    </div>
+  </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import Blogs from '../data/blog'
+import AboutMe from '../components/About.vue'
+import Services from '../components/Services.vue'
+import Contact from '../components/Contact.vue'
+import IntroTile from '../components/IntroTile.vue'
+import Testimonials from '../components/Testimonials.vue'
+import BlogList from '../components/blog/BlogList.vue'
 
 export default {
-  created() {
-    this.getPortfolioItems()
+  components: {
+    AboutMe,
+    BlogList,
+    IntroTile,
+    // eslint-disable-next-line vue/no-unused-components
+    Testimonials,
+    // eslint-disable-next-line vue/no-unused-components
+    Services,
+    // eslint-disable-next-line vue/no-unused-components
+    Contact
   },
-  methods: {
-    ...mapActions({
-      getPortfolioItems: 'portfolio/getPortfolioItems'
-    })
+  computed: {
+    isMobile() {
+      return this.$mq === 'xxs' || this.$mq === 'xs' || this.$mq === 'sm'
+    }
+  },
+  asyncData() {
+    const blogs = Blogs
+
+    async function asyncImport(blogName) {
+      const wholeMD = await import(`../data/blog/${blogName}/readme.md`)
+      return wholeMD.attributes
+    }
+
+    return Promise.all(blogs.map(b => asyncImport(b.title)))
+      .then(res => ({
+        blogs: res.filter(r => r.published)
+      }))
   }
 }
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+  a {
+    color: #0083aa !important;
+  }
+  .web-section {
+    padding: 25px 20px;
+  }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+  #about-section,
+  #contact-section {
+    background: #f8f8f8;
+  }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+  #blog-section,
+  #services-section {
+    background: #FFFFFF;
+  }
 </style>
