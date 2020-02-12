@@ -21,15 +21,15 @@
           width="100%"
         />
       </v-col>
-      <v-flex
-        md8
+      <v-col
+        md="8"
         pa-2
         offset-md-1
-        sm12
-        xs12
+        sm="12"
+        xs="12"
       >
         <div v-html="about.html"></div>
-      </v-flex>
+      </v-col>
     </v-row>
   </div>
 </template>
