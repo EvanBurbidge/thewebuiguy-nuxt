@@ -9,11 +9,9 @@
       v-if="!isMobile"
       class="intro-tile-image"
     >
-      <v-img
-        :src="logo"
-        :lazy-src="logo"
+      <img
+        src="../static/thewebuiguy-logo.jpg"
         alt="main-logo"
-        aspect-ratio="1"
         class="logo"
       />
     </div>
@@ -21,7 +19,6 @@
 </template>
 
 <script>
-import logo from '../static/thewebuiguy-logo.jpg'
 import DownArrow from './DownArrow.vue'
 
 export default {
@@ -29,9 +26,6 @@ export default {
     // eslint-disable-next-line vue/no-unused-components
     DownArrow
   },
-  data: () => ({
-    logo
-  }),
   computed: {
     isMobile() {
       return this.$mq === 'xxs' || this.$mq === 'xs' || this.$mq === 'sm'

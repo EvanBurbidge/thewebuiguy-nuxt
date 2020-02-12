@@ -55,7 +55,7 @@ export default {
     logo,
     height: 0,
     scrollPos: 0,
-    isTransparent: true,
+    isTransparent: false,
     isBlogPage: false
   }),
   computed: {
