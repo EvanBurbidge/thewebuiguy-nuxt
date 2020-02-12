@@ -1,11 +1,17 @@
 <template>
-  <v-layout class="blog-wrap">
-    <v-flex pa-3 xs12 sm3 md3 lg3>
+  <v-row justify="row" align-content="center" style="margin-top: 70px">
+    <v-col
+      :xs="12"
+      :md="3"
+    >
       <v-card style="padding: 20px">
         <blog-meta :blog="blog" />
       </v-card>
-    </v-flex>
-    <v-flex xs12 sm9 md9 lg9 pa-3>
+    </v-col>
+    <v-col
+      :xs="12"
+      :md="9"
+    >
       <v-card style="padding: 20px">
         <h1 class="display-1">
           {{ blog.attributes.title }}
@@ -14,8 +20,8 @@
         <br>
         <div v-html="blog.html" />
       </v-card>
-    </v-flex>
-  </v-layout>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
@@ -38,9 +44,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .blog-wrap {
   margin-top: 70px !important;
-  padding: 0 20px;
+  @media screen and (max-width: 769px) {
+    padding: 0;
+  }
 }
 </style>

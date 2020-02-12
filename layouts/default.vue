@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Navigation />
+    <Navigation v-if="!isMobile" />
     <v-layout
       column
       fill-height
@@ -16,6 +16,18 @@ import Navigation from '../components/Navigation.vue'
 export default {
   components: {
     Navigation
+  },
+  computed: {
+    isMobile() {
+      return this.$mq === 'xxs' || this.$mq === 'xs'
+    }
   }
 }
 </script>
+
+<style>
+.v-application code {
+  max-width: 100%;
+  color: #0083aa !important;
+}
+</style>

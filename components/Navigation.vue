@@ -15,28 +15,28 @@
         </nuxt-link>
       </v-toolbar-title>
       <v-spacer />
-      <v-toolbar-items class="hidden-xs-and-down">
+      <v-toolbar-items>
         <v-btn v-if="isBlogPage" to="/" text>
           Home
         </v-btn>
         <template v-else>
           <v-btn
             v-scroll-to="'#about-section'"
-            :dark="isTransparent"
+            :dark="isDarkButton"
             text
           >
             About
           </v-btn>
           <v-btn
             v-scroll-to="'#blog-section'"
-            :dark="isTransparent"
+            :dark="isDarkButton"
             text
           >
             Blog
           </v-btn>
           <v-btn
             v-scroll-to="'#contact-section'"
-            :dark="isTransparent"
+            :dark="isDarkButton"
             text
           >
             Contact Me
@@ -60,7 +60,7 @@ export default {
   }),
   computed: {
     stylesForFixed() {
-      if (!this.isTransparent) {
+      if (!this.isTransparent || this.isDarkButton) {
         return {
           position: 'fixed',
           top: 0,
@@ -83,6 +83,12 @@ export default {
         return 'transparent'
       }
       return 'white'
+    },
+    isMobile() {
+      return this.$mq === 'xxs' || this.$mq === 'xs' || this.$mq === 'sm'
+    },
+    isDarkButton() {
+      return this.isTransparent && !this.isMobile
     }
   },
   watch: {
