@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <Navigation v-show="$mq === 'md' || $mq === 'lg' || $mq === 'xl'" />
-    <first-navigation />
+    <Navigation  />
+    <first-navigation v-if="$mq === 'md' || $mq === 'lg' || $mq === 'xl'" />
     <v-layout
       column
       fill-height

@@ -48,7 +48,15 @@ module.exports = {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/vuetify',
-    'nuxt-mq',
+    ['nuxt-mq', {
+      defaultBreakpoint: 'default',
+      breakpoints: {
+        xs: 450,
+        sm: 769,
+        md: 1250,
+        lg: Infinity
+      }
+    }],
     // Or if you have custom options...
     ['vue-scrollto/nuxt', { duration: 300 }],
     ['nuxt-fontawesome', {
