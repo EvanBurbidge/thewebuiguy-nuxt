@@ -13,13 +13,13 @@
         </h1>
       </v-list-item>
       <v-list-item>
-        <fa :icon="['fas', 'user']" class="meta-icon"></fa>
+        <fa :icon="['fas', 'user']" class="meta-icon" />
         <h5 class="subtitle-1">
           {{ blog.attributes.author }}
         </h5>
       </v-list-item>
       <v-list-item>
-        <fa :icon="['fas', 'calendar']" class="meta-icon"></fa>
+        <fa :icon="['fas', 'calendar']" class="meta-icon" />
         <h5 class="subtitle-1">
           {{ blog.attributes.year }}
         </h5>

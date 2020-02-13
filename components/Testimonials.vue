@@ -1,7 +1,7 @@
 <template>
   <div>
     <template v-for="test in testimonials">
-      {{  test.title }}
+      {{ test.title }}
     </template>
   </div>
 </template>

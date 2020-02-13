@@ -1,6 +1,6 @@
 <template>
   <div class="my-app-wrapper">
-    <IntroTile id="home-section"/>
+    <IntroTile id="home-section" />
     <div id="about-section" class="web-section">
       <AboutMe />
     </div>

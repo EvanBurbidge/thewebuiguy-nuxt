@@ -16,7 +16,7 @@
         <h1 class="display-1">
           {{ blog.attributes.title }}
         </h1>
-        <hr />
+        <hr>
         <br>
         <div v-html="blog.html" />
       </v-card>
@@ -28,6 +28,7 @@
 const BlogMeta = () => import('../../components/blog/BlogMeta.vue')
 
 export default {
+  layout: 'bloglayout',
   components: {
     BlogMeta
   },

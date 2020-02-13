@@ -1,7 +1,6 @@
 <template>
   <transition>
     <v-toolbar
-      :flat="true"
       class="navigation-bar"
       color="transparent"
     >
@@ -17,32 +16,10 @@
       <v-spacer />
       <v-toolbar-items>
         <v-btn
-          v-scroll-to="'#home-section'"
-          :dark="true"
+          to="/"
           text
         >
           Home
-        </v-btn>
-        <v-btn
-          v-scroll-to="'#about-section'"
-          :dark="true"
-          text
-        >
-          About
-        </v-btn>
-        <v-btn
-          v-scroll-to="'#blog-section'"
-          :dark="true"
-          text
-        >
-          Blog
-        </v-btn>
-        <v-btn
-          v-scroll-to="'#contact-section'"
-          :dark="true"
-          text
-        >
-          Contact Me
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
