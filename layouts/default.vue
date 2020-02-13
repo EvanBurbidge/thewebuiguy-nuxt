@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Navigation />
+    <Navigation v-show="$mq === 'md' || $mq === 'lg' || $mq === 'xl'" />
     <first-navigation />
     <v-layout
       column
