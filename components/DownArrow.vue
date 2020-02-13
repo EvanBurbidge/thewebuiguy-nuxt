@@ -7,7 +7,9 @@
 
   body {margin:100px;background-color:#0083aa;}
 
-  .pos {position:relative;margin:0 auto;}
+  .pos {position:relative;
+    margin: 20px auto 0;
+  }
 
   .down-arrow {height:60px;width:60px;border:5px solid #0083aa;border-radius:100%;}
 

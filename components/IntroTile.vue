@@ -1,19 +1,13 @@
 <template>
   <div class="intro-tile-wrapper">
-    <div class="intro-tile-text">
+    <div class="intro-tile-text text-center">
       <h2 class="intro-tile-text-heading display-3 text-light">
         Welcome, I'm
       </h2>
-    </div>
-    <div
-      v-if="!isMobile"
-      class="intro-tile-image"
-    >
-      <img
-        src="../static/thewebuiguy-logo.jpg"
-        alt="main-logo"
-        class="logo"
-      />
+      <h2 class="intro-tile-text-heading display-2">
+        <span class="primary-text">The</span><span class="secondary-text">Web</span><span class="primary-text">UI</span><span class="secondary-text">Guy</span>
+      </h2>
+      <down-arrow />
     </div>
   </div>
 </template>
@@ -25,11 +19,6 @@ export default {
   components: {
     // eslint-disable-next-line vue/no-unused-components
     DownArrow
-  },
-  computed: {
-    isMobile() {
-      return this.$mq === 'xxs' || this.$mq === 'xs' || this.$mq === 'sm'
-    }
   }
 }
 </script>
@@ -56,6 +45,14 @@ export default {
 
     &-text {
       z-index: 1;
+      font-weight: bold;
+      text-transform: uppercase;
+      .primary-text {
+        color: #0083aa;
+      }
+      .secondary-text {
+        color: #005d7f;
+      }
     }
 
     &-wrapper {
@@ -67,7 +64,7 @@ export default {
       align-items: center;
       background-size: cover;
       margin-top: -64px;
-      background-position: right;
+      background-position: 0 50px;
       background-repeat: no-repeat;
       background-image: url("../assets/homeBg.png");
       justify-content: center;

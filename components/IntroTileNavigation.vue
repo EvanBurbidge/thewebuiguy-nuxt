@@ -1,9 +1,9 @@
 <template>
-  <transition v-show="zIndex > 0">
+  <transition>
     <v-toolbar
-      :style="{'z-index': zIndex}"
+      :flat="true"
       class="navigation-bar"
-      color="white"
+      color="transparent"
     >
       <v-toolbar-title>
         <nuxt-link to="/">
@@ -16,23 +16,29 @@
       </v-toolbar-title>
       <v-spacer/>
       <v-toolbar-items>
-        <v-btn v-scroll-to="'#home-section'" text>
+        <v-btn
+          v-scroll-to="'#home-section'"
+          :dark="true"
+          text>
           Home
         </v-btn>
         <v-btn
           v-scroll-to="'#about-section'"
+          :dark="true"
           text
         >
           About
         </v-btn>
         <v-btn
           v-scroll-to="'#blog-section'"
+          :dark="true"
           text
         >
           Blog
         </v-btn>
         <v-btn
           v-scroll-to="'#contact-section'"
+          :dark="true"
           text
         >
           Contact Me
@@ -47,42 +53,14 @@ import logo from '../static/logo.png'
 
 export default {
   data: () => ({
-    logo,
-    height: 0,
-    scrollPos: 0,
-    zIndex: 0,
-    isBlogPage: false
-  }),
-  created() {
-    if (process.browser) {
-      this.scrollPos = window.scrollY
-      this.height = window.innerHeight
-      window.addEventListener('scroll', e => this.getScrollPos(e), false)
-    }
-  },
-  destroyed() {
-    if (process.browser) {
-      window.removeEventListener('scroll', this.getScrollPos)
-    }
-  },
-  methods: {
-    getScrollPos() {
-      if (process.browser) {
-        this.scrollPos = window.scrollY
-        if (this.scrollPos > this.height) {
-          this.zIndex = 2
-        } else {
-          this.zIndex = 0
-        }
-      }
-    }
-  }
+    logo
+  })
 }
 </script>
 
 <style scoped lang="scss">
   .navigation-bar {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;

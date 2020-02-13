@@ -1,6 +1,7 @@
 <template>
   <v-app>
-    <Navigation v-if="!isMobile" />
+    <Navigation />
+    <first-navigation />
     <v-layout
       column
       fill-height
@@ -12,10 +13,12 @@
 
 <script>
 import Navigation from '../components/Navigation.vue'
+import FirstNavigation from '../components/IntroTileNavigation.vue'
 
 export default {
   components: {
-    Navigation
+    Navigation,
+    FirstNavigation
   },
   computed: {
     isMobile() {
