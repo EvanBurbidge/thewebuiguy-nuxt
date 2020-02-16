@@ -69,15 +69,15 @@ export default {
       background-image: url("../assets/homeBg.png");
       justify-content: center;
       border-bottom: 1px solid #0083aa;
-      @media screen and (max-width: 1440px) {
-        background-position: -275px 50px;
-      }
-      @media screen and (max-width: 1150px) {
-        background-position: -550px 50px;
-      }
-      @media screen and (min-width: 769px) and (max-width:800px){
-        background-position: -650px 50px;
-      }
+      <!--@media screen and (max-width: 1440px) {-->
+      <!--  background-position: 0 50px;-->
+      <!--}-->
+      <!--@media screen and (max-width: 1150px) {-->
+      <!--  background-position: -550px 50px;-->
+      <!--}-->
+      <!--@media screen and (min-width: 769px) and (max-width:800px){-->
+      <!--  background-position: -650px 50px;-->
+      <!--}-->
 
       @media screen and (max-width: 768px) {
         display: none;
