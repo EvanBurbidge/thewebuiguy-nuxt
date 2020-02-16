@@ -1,7 +1,6 @@
 <template>
   <v-app>
     <Navigation  />
-    <first-navigation v-if="$mq === 'md' || $mq === 'lg' || $mq === 'xl'" />
     <v-layout
       column
       fill-height
@@ -13,12 +12,11 @@
 
 <script>
 import Navigation from '../components/Navigation.vue'
-import FirstNavigation from '../components/IntroTileNavigation.vue'
+// import FirstNavigation from '../components/IntroTileNavigation.vue'
 
 export default {
   components: {
-    Navigation,
-    FirstNavigation
+    Navigation
   },
   computed: {
     isMobile() {

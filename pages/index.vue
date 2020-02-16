@@ -1,11 +1,11 @@
 <template>
   <div class="my-app-wrapper">
-    <IntroTile id="home-section" />
-    <div id="about-section" class="web-section">
-      <AboutMe />
-    </div>
+  <!--    <IntroTile id="home-section" />-->
     <div id="blog-section" class="web-section">
       <BlogList :blogs="blogs" />
+    </div>
+    <div id="about-section" class="web-section">
+      <AboutMe />
     </div>
     <div id="contact-section" class="web-section">
       <contact />
@@ -18,7 +18,7 @@ import Blogs from '../data/blog'
 import AboutMe from '../components/About.vue'
 import Services from '../components/Services.vue'
 import Contact from '../components/Contact.vue'
-import IntroTile from '../components/IntroTile.vue'
+// import IntroTile from '../components/IntroTile.vue'
 import Testimonials from '../components/Testimonials.vue'
 import BlogList from '../components/blog/BlogList.vue'
 
@@ -26,7 +26,7 @@ export default {
   components: {
     AboutMe,
     BlogList,
-    IntroTile,
+    // IntroTile,
     // eslint-disable-next-line vue/no-unused-components
     Testimonials,
     // eslint-disable-next-line vue/no-unused-components
@@ -63,13 +63,13 @@ export default {
     padding: 25px 20px;
   }
 
-  #about-section,
-  #contact-section {
+  #about-section {
     background: #f8f8f8;
   }
 
   #blog-section,
-  #services-section {
+  #services-section,
+  #contact-section {
     background: #FFFFFF;
   }
 </style>
