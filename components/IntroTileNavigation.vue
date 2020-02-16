@@ -8,7 +8,7 @@
       <v-toolbar-title>
         <nuxt-link to="/">
           <img
-            src="../static/logo.png"
+            src="../static/logo-white-only.png"
             alt="the main webuiguy logo"
             class="main-logo"
           >

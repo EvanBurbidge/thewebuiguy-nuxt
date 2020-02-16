@@ -5,15 +5,15 @@
 <style scoped>
   * {box-sizing:border-box;transition:all 0.3s;-webkit-transition:all 0.3s;}
 
-  body {margin:100px;background-color:#0083aa;}
+  body {margin:100px;background-color:#FFFFFF;}
 
   .pos {position:relative;
     margin: 20px auto 0;
   }
 
-  .down-arrow {height:60px;width:60px;border:5px solid #0083aa;border-radius:100%;}
+  .down-arrow {height:60px;width:60px;border:5px solid #FFFFFF;border-radius:100%;}
 
-  .down-arrow:before,.down-arrow:after {content:'';position:absolute;top:26px;width:18px;border:1px solid #0083aa;transition:all 0.3s;-webkit-transition:all 0.3s;}
+  .down-arrow:before,.down-arrow:after {content:'';position:absolute;top:26px;width:18px;border:1px solid #FFFFFF;transition:all 0.3s;-webkit-transition:all 0.3s;}
 
   .down-arrow:before {transform:rotateZ(45deg);-webkit-transform:rotateZ(45deg);left:10px;}
   .down-arrow:after {transform:rotateZ(-45deg);-webkit-transform:rotateZ(-45deg);left:22px;}

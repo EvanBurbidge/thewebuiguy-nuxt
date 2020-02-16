@@ -5,7 +5,7 @@
         Welcome, I'm
       </h2>
       <h2 class="intro-tile-text-heading display-2">
-        <span class="primary-text">The</span><span class="secondary-text">Web</span><span class="primary-text">UI</span><span class="secondary-text">Guy</span>
+        TheWebUIGuy
       </h2>
       <down-arrow />
     </div>
@@ -45,14 +45,15 @@ export default {
 
     &-text {
       z-index: 1;
+      color: #ffffff;
       font-weight: bold;
       text-transform: uppercase;
-      .primary-text {
-        color: #0083aa;
-      }
-      .secondary-text {
-        color: #005d7f;
-      }
+      /*.primary-text {*/
+      /*  color: #0083aa;*/
+      /*}*/
+      /*.secondary-text {*/
+      /*  color: #005d7f;*/
+      /*}*/
     }
 
     &-wrapper {
@@ -64,20 +65,11 @@ export default {
       align-items: center;
       background-size: cover;
       margin-top: -64px;
-      background-position: 0 50px;
+      background-position: right;
       background-repeat: no-repeat;
-      background-image: url("../assets/homeBg.png");
+      background-image: url("../static/background-cover.jpg");
       justify-content: center;
       border-bottom: 1px solid #0083aa;
-      <!--@media screen and (max-width: 1440px) {-->
-      <!--  background-position: 0 50px;-->
-      <!--}-->
-      <!--@media screen and (max-width: 1150px) {-->
-      <!--  background-position: -550px 50px;-->
-      <!--}-->
-      <!--@media screen and (min-width: 769px) and (max-width:800px){-->
-      <!--  background-position: -650px 50px;-->
-      <!--}-->
 
       @media screen and (max-width: 768px) {
         display: none;
