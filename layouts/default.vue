@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Navigation  />
+    <Navigation />
     <v-layout
       column
       fill-height

@@ -17,16 +17,16 @@
       <v-spacer />
       <v-toolbar-items>
         <v-btn
-          v-scroll-to="'#blog-section'"
-          text
-        >
-          Blog
-        </v-btn>
-        <v-btn
           v-scroll-to="'#about-section'"
           text
         >
           About
+        </v-btn>
+        <v-btn
+          v-scroll-to="'#blog-section'"
+          text
+        >
+          Blog
         </v-btn>
         <v-btn
           v-scroll-to="'#contact-section'"

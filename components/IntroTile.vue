@@ -1,12 +1,17 @@
 <template>
   <div class="intro-tile-wrapper">
     <div class="intro-tile-text text-center">
-      <h2 class="intro-tile-text-heading display-3 text-light">
-        Welcome, I'm
-      </h2>
-      <h2 class="intro-tile-text-heading display-2">
-        TheWebUIGuy
-      </h2>
+      <span>
+        <h2 class="intro-tile-text-heading display-3 text-light">
+          Welcome, I'm
+        </h2>
+        <h2 class="intro-tile-text-heading display-2">
+          TheWebUIGuy
+        </h2>
+      </span>
+      <br>
+      <img src="../static/logo-white-only.png" alt="main logo" style="width: 100px;">
+      <br>
       <down-arrow />
     </div>
   </div>
