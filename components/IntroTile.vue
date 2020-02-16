@@ -65,10 +65,9 @@ export default {
       align-items: center;
       background-size: cover;
       margin-top: -64px;
-      background-position: right;
-      background-repeat: no-repeat;
-      background-image: url("../static/background-cover.jpg");
+      background: #0083aa;
       justify-content: center;
+      /*clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);*/
       border-bottom: 1px solid #0083aa;
 
       @media screen and (max-width: 768px) {
