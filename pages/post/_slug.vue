@@ -44,7 +44,6 @@ export default {
         return hljs.highlightAuto(md).value
       }
     })
-    console.warn(processed)
     return {
       blog: {
         ...blog,
