@@ -25,10 +25,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.v-application code {
-  max-width: 100%;
-  color: #0083aa !important;
-}
-</style>

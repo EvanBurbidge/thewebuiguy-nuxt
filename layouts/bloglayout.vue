@@ -21,8 +21,8 @@ export default {
 </script>
 
 <style>
-  .v-application code {
-    max-width: 100%;
-    color: #0083aa !important;
-  }
+.v-application code {
+  width: 100%;
+  padding: 20px;
+}
 </style>

@@ -25,6 +25,10 @@
 </template>
 
 <script>
+import marked from 'marked'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/github.css'
+
 const BlogMeta = () => import('../../components/blog/BlogMeta.vue')
 
 export default {
@@ -35,9 +39,16 @@ export default {
   async asyncData({ params }) {
     const blog = await import(`../../data/blog/${params.slug}/readme.md`)
     const blogImage = `../../images/blog/${params.slug.toLowerCase()}/_thumb.png`
+    const processed = marked(blog.html, {
+      highlight(md) {
+        return hljs.highlightAuto(md).value
+      }
+    })
+    console.warn(processed)
     return {
       blog: {
         ...blog,
+        html: processed,
         image: blogImage
       }
     }
