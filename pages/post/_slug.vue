@@ -4,7 +4,10 @@
       :xs="12"
       :md="3"
     >
-      <v-card style="padding: 20px">
+      <v-card
+        style="padding: 20px"
+        :flat="$mq ==='xxs' || $mq === 'xs'"
+      >
         <blog-meta :blog="blog" />
       </v-card>
     </v-col>
@@ -12,12 +15,17 @@
       :xs="12"
       :md="9"
     >
-      <v-card style="padding: 20px">
-        <h1 class="display-1">
-          {{ blog.attributes.title }}
-        </h1>
-        <hr>
-        <br>
+      <v-card
+        style="padding: 20px"
+        :flat="$mq ==='xxs' || $mq === 'xs'"
+      >
+        <template v-if="!($mq ==='xxs' || $mq === 'xs')">
+          <h1 class="display-1">
+            {{ blog.attributes.title }}
+          </h1>
+          <hr>
+          <br>
+        </template>
         <div v-html="blog.html" />
       </v-card>
     </v-col>
