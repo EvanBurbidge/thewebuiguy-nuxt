@@ -34,25 +34,28 @@
         offset-md-1
         pa-2
       >
-        <div v-html="about.html" />
+        <blog-markdown
+          :render-func="fileContent.vue.render"
+          :static-render-funcs="fileContent.vue.staticRenderFns"
+        />
       </v-col>
     </v-row>
   </div>
 </template>
 
 <script>
-import aboutMeImg from '../static/aboutme.jpg'
-import data from '../data/about/AboutMe.md'
+// import aboutMeImg from '../static/aboutme.jpg'
+import BlogMarkdown from './blog/BlogMarkdown.vue'
+
 const SectionHeading = () => import('./common/SectionHeading.vue')
 
 export default {
+  props: ['fileContent'],
   components: {
-    SectionHeading
-  },
-  data: () => ({
-    aboutMeImg,
-    about: data
-  })
+    SectionHeading,
+    // eslint-disable-next-line vue/no-unused-components
+    BlogMarkdown
+  }
 }
 </script>
 

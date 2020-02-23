@@ -26,36 +26,31 @@
           <hr>
           <br>
         </template>
-        <div v-html="blog.html" />
+        <blog-markdown
+          :render-func="blog.vue.render"
+          :static-render-funcs="blog.vue.staticRenderFns"
+        />
       </v-card>
     </v-col>
   </v-row>
 </template>
 
 <script>
-import marked from 'marked'
-import hljs from 'highlight.js'
-import 'highlight.js/styles/github.css'
-
+import BlogMarkdown from '../../components/blog/BlogMarkdown'
 const BlogMeta = () => import('../../components/blog/BlogMeta.vue')
 
 export default {
   layout: 'bloglayout',
   components: {
+    BlogMarkdown,
     BlogMeta
   },
   async asyncData({ params }) {
     const blog = await import(`../../data/blog/${params.slug}/readme.md`)
     const blogImage = `../../images/blog/${params.slug.toLowerCase()}/_thumb.png`
-    const processed = marked(blog.html, {
-      highlight(md) {
-        return hljs.highlightAuto(md).value
-      }
-    })
     return {
       blog: {
         ...blog,
-        html: processed,
         image: blogImage
       }
     }

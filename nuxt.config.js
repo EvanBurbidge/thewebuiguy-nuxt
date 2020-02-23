@@ -1,4 +1,14 @@
+import MarkdownIt from 'markdown-it'
+import Mode from 'frontmatter-markdown-loader/mode'
+import mip from 'markdown-it-prism'
+
 import files from './data/blog'
+
+const md = new MarkdownIt({
+  html: true,
+  typographer: true
+})
+md.use(mip)
 
 const path = require('path')
 const pkg = require('./package')
@@ -35,6 +45,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
+
+    '@/assets/prism-light.css'
   ],
 
   /*
@@ -46,9 +58,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/axios',
     '@nuxtjs/vuetify',
-
     ['nuxt-mq', {
       defaultBreakpoint: 'default',
       breakpoints: {
@@ -74,9 +84,6 @@ module.exports = {
       ]
     }]
   ],
-  axios: {
-    proxy: true // Can be also an object with default options
-  },
   vuetify: {
     materialIcons: true,
     css: true,
@@ -87,9 +94,6 @@ module.exports = {
       error: '#B71243',
       accent: '#56964b'
     }
-  },
-  proxy: {
-    '/v2/': 'http://thewebuiguy.com/wp-json/wp/'
   },
   generate: {
     routes: []
@@ -110,7 +114,13 @@ module.exports = {
         loader: 'frontmatter-markdown-loader',
         include: path.resolve(__dirname, 'data'),
         options: {
-          vue: true
+          mode: [Mode.VUE_RENDER_FUNCTIONS, Mode.VUE_COMPONENT],
+          vue: {
+            root: 'dynamicMarkdown'
+          },
+          markdown(body) {
+            return md.render(body)
+          }
         }
       })
       if (ctx.isDev && ctx.isClient) {
