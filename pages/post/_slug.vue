@@ -59,6 +59,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.v-application code {
+  background: transparent !important;
+}
 .blog-wrap {
   margin-top: 70px !important;
   @media screen and (max-width: 769px) {

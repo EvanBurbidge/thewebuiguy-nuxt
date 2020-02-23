@@ -24,5 +24,6 @@ export default {
 .v-application code {
   width: 100%;
   padding: 20px;
+  background: transparent !important;
 }
 </style>
