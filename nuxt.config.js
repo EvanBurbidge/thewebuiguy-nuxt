@@ -86,7 +86,7 @@ module.exports = {
   ],
   vuetify: {
     materialIcons: true,
-    css: true,
+    css: false,
     treeShake: true,
     theme: {
       primary: '#0083aa',

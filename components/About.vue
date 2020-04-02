@@ -35,8 +35,9 @@
         pa-2
       >
         <blog-markdown
-          :render-func="fileContent.vue.render"
-          :static-render-funcs="fileContent.vue.staticRenderFns"
+          v-if="aboutDataRender"
+          :render-func="aboutDataRender"
+          :static-render-funcs="aboutDataStaticRender"
         />
       </v-col>
     </v-row>
@@ -50,11 +51,19 @@ import BlogMarkdown from './blog/BlogMarkdown.vue'
 const SectionHeading = () => import('./common/SectionHeading.vue')
 
 export default {
-  props: ['fileContent'],
   components: {
     SectionHeading,
     // eslint-disable-next-line vue/no-unused-components
     BlogMarkdown
+  },
+  data: () => ({
+    aboutDataRender: null,
+    aboutDataStaticRender: null
+  }),
+  async created() {
+    const aboutData = await import('../data/about/AboutMe.md')
+    this.aboutDataRender = aboutData.vue.render
+    this.aboutDataStaticRender = aboutData.vue.staticRenderFns
   }
 }
 </script>

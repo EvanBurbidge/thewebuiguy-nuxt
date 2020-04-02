@@ -2,7 +2,7 @@
   <div class="my-app-wrapper">
     <IntroTile id="home-section" />
     <div id="about-section" class="web-section">
-      <about-me :file-content="aboutData" />
+      <about-me />
     </div>
     <div id="blog-section" class="web-section">
       <BlogList :blogs="blogs" />
@@ -39,7 +39,7 @@ export default {
       return this.$mq === 'xxs' || this.$mq === 'xs' || this.$mq === 'sm'
     }
   },
-  async asyncData() {
+  asyncData() {
     const blogs = Blogs
 
     async function asyncImport(blogName) {
@@ -47,12 +47,9 @@ export default {
       return wholeMD.attributes
     }
 
-    const aboutData = await import('../data/about/AboutMe.md')
-
     return Promise.all(blogs.map(b => asyncImport(b.title)))
       .then(res => ({
-        blogs: res.filter(r => r.published),
-        aboutData
+        blogs: res.filter(r => r.published)
       }))
   }
 }

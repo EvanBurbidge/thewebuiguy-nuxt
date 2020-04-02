@@ -1,3 +1,15 @@
+---
+name: 'about me'
+title: About Me
+year: 27th November 2019
+color: '#0083aa'
+author: 'evanb54'
+id: 'about-me-blog'
+published: false
+description: |
+  Little bit about me
+---
+
 ## Hello
 
 I'm Evan, I'm currently the Lead Frontend Engineer at Visma Labs, I'm primarily working on the Visma InSchool Project. 

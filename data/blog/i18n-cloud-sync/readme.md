@@ -7,7 +7,7 @@ author: 'evanb54'
 id: 'i18n-cloud-sync-blog'
 published: true
 description: |
-  An overview of the i18n cloud sync project
+  An overview of the i18n cloud sync project, which caters for AWS S3, Google cloud storage, Digital ocean spaces
 ---
 # i18n-sync
 I18n-sync is a simple node js project that provides a restful api for syncing translations, and their locations to the cloud. All work is done via restful api calls in order to update files and configurations. 
