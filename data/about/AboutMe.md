@@ -12,7 +12,7 @@ description: |
 
 ## Hello
 
-I'm Evan, I'm currently the Lead Frontend Engineer at Visma Labs, I'm primarily working on the Visma InSchool Project. 
+I'm Evan, I'm currently a senior software engineer at HubSpot. Prior to this I was the Lead Frontend Engineer at Visma Labs, primarily working on the Visma InSchool Project. 
 I'm a full stack developer, using a Full Stack range of JS technologies, e.g. MongoDB, ExpressJS, VueJS, Typescript.
  
 I have authored a number of NPM packages the first one <a href="https://www.npmjs.com/package/rabbitode" target="_blank"> Rabbitode </a> is a package which allows you 
