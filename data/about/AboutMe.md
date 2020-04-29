@@ -12,14 +12,24 @@ description: |
 
 ## Hello
 
-I'm Evan, I'm currently a senior software engineer at HubSpot. Prior to this I was the Lead Frontend Engineer at Visma Labs, primarily working on the Visma InSchool Project. 
+Hi I'm Evan, I'm a Senior Software Engineer at HubSpot based in their Dublin offices. Prior to this I've worked for Visma Labs, Blueface and Risk.Ident.
+
 I'm a full stack developer, using a Full Stack range of JS technologies, e.g. MongoDB, ExpressJS, VueJS, Typescript.
  
-I have authored a number of NPM packages the first one <a href="https://www.npmjs.com/package/rabbitode" target="_blank"> Rabbitode </a> is a package which allows you 
-to easily interface the the RabbitMQ library. Another package is the <a href="https://www.npmjs.com/package/js-file-req" target="_blank"> JS-File-Req package </a> which quickly
-allows you to import the files and folders of a sub-folder's within your application. All of these packages are open source and can be used free of charge.
-
-In the past I have worked for the companies Blueface and Risk.Ident Gmbh.
+I have authored a number of NPM packages
+ <ul>
+   <li>
+       <a href="https://www.npmjs.com/package/i18n-cloud-sync" target="_blank"> i18n-cloud-sync </a>
+     </li>
+    <li>
+      <a href="https://www.npmjs.com/package/rabbitode" target="_blank"> Rabbitode </a>
+    </li>
+    <li>
+      <a href="https://www.npmjs.com/package/js-file-req" target="_blank"> JS-File-Req package </a>
+    </li>
+ </ul> 
+    <br />
+ All of these packages are open source and can be used free of charge.
 
 Currently I am conducting research into micro frontends and how to use them at scale.
 

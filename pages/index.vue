@@ -64,7 +64,7 @@ export default {
   }
 
   #about-section {
-    background: #f8f8f8;
+    background: #f5f8fa;
   }
 
   #blog-section,
