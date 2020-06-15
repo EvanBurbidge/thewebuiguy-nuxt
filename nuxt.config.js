@@ -15,7 +15,6 @@ const pkg = require('./package')
 
 module.exports = {
   mode: 'universal',
-
   /*
   ** Headers of the page
   */
@@ -45,7 +44,6 @@ module.exports = {
   ** Global CSS
   */
   css: [
-
     '@/assets/prism-light.css'
   ],
 
@@ -58,7 +56,6 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/vuetify',
     ['nuxt-mq', {
       defaultBreakpoint: 'default',
       breakpoints: {
@@ -75,7 +72,7 @@ module.exports = {
       imports: [
         {
           set: '@fortawesome/fontawesome-free-brands',
-          icons: ['faFacebook', 'faTwitter', 'faLinkedin']
+          icons: ['faFacebook', 'faTwitter', 'faLinkedin', 'faGithub']
         },
         {
           set: '@fortawesome/fontawesome-free-solid',
@@ -84,17 +81,6 @@ module.exports = {
       ]
     }]
   ],
-  vuetify: {
-    materialIcons: true,
-    css: false,
-    treeShake: true,
-    theme: {
-      primary: '#0083aa',
-      secondary: '#094A5D',
-      error: '#B71243',
-      accent: '#56964b'
-    }
-  },
   generate: {
     routes: []
       .concat(files.map(w => `/post/${w.title}`))
@@ -103,7 +89,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    transpile: [/^vuetify/],
     /*
     ** You can extend webpack config here
     */
