@@ -1,6 +1,12 @@
 <template>
   <div class="my-app-wrapper">
-    <IntroTile id="home-section" />
+    <Header />
+    <ul>
+      <li v-for="blog in allBlogs" :key="blog.blogSlug">
+        {{ blog.blogTitle }}
+      </li>
+    </ul>
+    <!-- <IntroTile id="home-section" />
     <div id="about-section" class="web-section">
       <about-me />
     </div>
@@ -9,19 +15,32 @@
     </div>
     <div id="contact-section" class="web-section">
       <contact />
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-
+import gql from 'graphql-tag'
+import Header from '../components/header/Header.vue'
 
 export default {
+  components: {
+    Header
+  },
+  apollo: {
+    allBlogs: gql`
+      {
+        allBlogs {
+          blogTitle
+        }
+      }
+    `
+  },
   computed: {
     isMobile() {
       return this.$mq === 'xxs' || this.$mq === 'xs' || this.$mq === 'sm'
     }
-  },
+  }
 }
 </script>
 

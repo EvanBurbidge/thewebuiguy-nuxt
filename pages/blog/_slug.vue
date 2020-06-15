@@ -6,9 +6,8 @@
 
 <script>
 
-
 export default {
-  layout: 'bloglayout',
+  layout: 'bloglayout'
 }
 </script>
 

@@ -31,6 +31,10 @@ module.exports = {
         rel: 'icon',
         type: 'image/x-icon',
         href: 'favicon.ico'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap'
       }
     ]
   },
@@ -56,6 +60,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    ['@nuxtjs/tailwindcss'],
     ['@nuxtjs/apollo'],
     ['nuxt-mq', {
       defaultBreakpoint: 'default',
@@ -84,8 +89,8 @@ module.exports = {
   ],
   apollo: {
     clientConfigs: {
-      default: '~/apollo/config.js',
-    },
+      default: '~/apollo/config.js'
+    }
   },
   generate: {
     routes: []
