@@ -56,6 +56,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    ['@nuxtjs/apollo'],
     ['nuxt-mq', {
       defaultBreakpoint: 'default',
       breakpoints: {
@@ -81,9 +82,14 @@ module.exports = {
       ]
     }]
   ],
+  apollo: {
+    clientConfigs: {
+      default: '~/apollo/config.js',
+    },
+  },
   generate: {
     routes: []
-      .concat(files.map(w => `/post/${w.title}`))
+      .concat(files.map(w => `/blog/${w.title}`))
   },
   /*
   ** Build configuration
