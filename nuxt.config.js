@@ -15,7 +15,6 @@ const pkg = require('./package')
 
 module.exports = {
   mode: 'universal',
-
   /*
   ** Headers of the page
   */
@@ -32,6 +31,10 @@ module.exports = {
         rel: 'icon',
         type: 'image/x-icon',
         href: 'favicon.ico'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap'
       }
     ]
   },
@@ -45,7 +48,6 @@ module.exports = {
   ** Global CSS
   */
   css: [
-
     '@/assets/prism-light.css'
   ],
 
@@ -58,7 +60,8 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/vuetify',
+    ['@nuxtjs/tailwindcss'],
+    ['@nuxtjs/apollo'],
     ['nuxt-mq', {
       defaultBreakpoint: 'default',
       breakpoints: {
@@ -75,7 +78,7 @@ module.exports = {
       imports: [
         {
           set: '@fortawesome/fontawesome-free-brands',
-          icons: ['faFacebook', 'faTwitter', 'faLinkedin']
+          icons: ['faFacebook', 'faTwitter', 'faLinkedin', 'faGithub']
         },
         {
           set: '@fortawesome/fontawesome-free-solid',
@@ -84,26 +87,19 @@ module.exports = {
       ]
     }]
   ],
-  vuetify: {
-    materialIcons: true,
-    css: false,
-    treeShake: true,
-    theme: {
-      primary: '#0083aa',
-      secondary: '#094A5D',
-      error: '#B71243',
-      accent: '#56964b'
+  apollo: {
+    clientConfigs: {
+      default: '~/apollo/config.js'
     }
   },
   generate: {
     routes: []
-      .concat(files.map(w => `/post/${w.title}`))
+      .concat(files.map(w => `/blog/${w.title}`))
   },
   /*
   ** Build configuration
   */
   build: {
-    transpile: [/^vuetify/],
     /*
     ** You can extend webpack config here
     */

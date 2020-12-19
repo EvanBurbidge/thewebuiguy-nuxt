@@ -1,22 +1,16 @@
 <template>
-  <v-app>
-    <Navigation />
-    <v-layout
-      column
-      fill-height
-    >
-      <nuxt />
-    </v-layout>
-  </v-app>
+  <div>
+    <navigation-bar />
+    <nuxt />
+  </div>
 </template>
 
 <script>
-import Navigation from '../components/Navigation.vue'
-// import FirstNavigation from '../components/IntroTileNavigation.vue'
+import NavigationBar from '../components/navigation/NavigationBar.vue'
 
 export default {
   components: {
-    Navigation
+    NavigationBar
   },
   computed: {
     isMobile() {
@@ -25,3 +19,9 @@ export default {
   }
 }
 </script>
+
+<style>
+body {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+</style>

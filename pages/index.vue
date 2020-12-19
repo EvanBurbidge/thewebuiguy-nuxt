@@ -1,6 +1,12 @@
 <template>
   <div class="my-app-wrapper">
-    <IntroTile id="home-section" />
+    <Header />
+    <ul>
+      <li v-for="blog in allBlogs" :key="blog.blogSlug">
+        {{ blog.blogTitle }}
+      </li>
+    </ul>
+    <!-- <IntroTile id="home-section" />
     <div id="about-section" class="web-section">
       <about-me />
     </div>
@@ -9,48 +15,31 @@
     </div>
     <div id="contact-section" class="web-section">
       <contact />
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import Blogs from '../data/blog'
-import AboutMe from '../components/About.vue'
-import Services from '../components/Services.vue'
-import Contact from '../components/Contact.vue'
-import IntroTile from '../components/IntroTile.vue'
-import Testimonials from '../components/Testimonials.vue'
-import BlogList from '../components/blog/BlogList.vue'
+import gql from 'graphql-tag'
+import Header from '../components/header/Header.vue'
 
 export default {
   components: {
-    AboutMe,
-    BlogList,
-    IntroTile,
-    // eslint-disable-next-line vue/no-unused-components
-    Testimonials,
-    // eslint-disable-next-line vue/no-unused-components
-    Services,
-    // eslint-disable-next-line vue/no-unused-components
-    Contact
+    Header
+  },
+  apollo: {
+    allBlogs: gql`
+      {
+        allBlogs {
+          blogTitle
+        }
+      }
+    `
   },
   computed: {
     isMobile() {
       return this.$mq === 'xxs' || this.$mq === 'xs' || this.$mq === 'sm'
     }
-  },
-  asyncData() {
-    const blogs = Blogs
-
-    async function asyncImport(blogName) {
-      const wholeMD = await import(`../data/blog/${blogName}/readme.md`)
-      return wholeMD.attributes
-    }
-
-    return Promise.all(blogs.map(b => asyncImport(b.title)))
-      .then(res => ({
-        blogs: res.filter(r => r.published)
-      }))
   }
 }
 </script>
