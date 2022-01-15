@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "vue-types": "^1.5.0",
-    "marked": "^0.8.0",
+    "marked": "^4.0.10",
     "@nuxtjs/eslint-config": "^0.0.1",
     "@nuxtjs/markdownit": "^1.2.7",
     "@vue/test-utils": "^1.0.0-beta.27",
